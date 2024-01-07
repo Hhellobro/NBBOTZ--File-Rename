@@ -223,7 +223,7 @@ async def settings(bot, message):
 
 
  elif data == "help":
-await query.message.edit_text(
+     await query.message.edit_text(
             text=Translation.HELP_TXT,
             disable_web_page_preview = True,
             reply_markup=InlineKeyboardMarkup(
