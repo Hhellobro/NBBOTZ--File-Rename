@@ -25,7 +25,7 @@ async def upgrade(bot,update):
 	keybord = InlineKeyboardMarkup([[ 
         			InlineKeyboardButton("ADMIN ",url = "https://t.me/Bot0987654")], 
         			[InlineKeyboardButton("Paytm",url = "https://p.paytm.me/xCTH/vo37hii9"),
-        			InlineKeyboardButton("Paytm",url = "https://p.paytm.me/xCTH/vo37hii9")],[InlineKeyboardButton("Cancel",callback_data = "start")  ]])
+        			InlineKeyboardButton("Paytm",url = "https://p.paytm.me/xCTH/vo37hii9")],[InlineKeyboardButton("Cancel",callback_data = "close")  ]])
 	await update.message.edit(text = text,reply_markup = keybord)
 	
 
@@ -51,5 +51,5 @@ async def upgradecm(bot,message):
 	keybord = InlineKeyboardMarkup([[ 
         			InlineKeyboardButton("ADMIN ",url = "https://t.me/Bot0987654")], 
         			[InlineKeyboardButton("Paytm",url = "https://p.paytm.me/xCTH/vo37hii9"),
-        			InlineKeyboardButton("Paytm",url = "https://p.paytm.me/xCTH/vo37hii9")],[InlineKeyboardButton("Cancel",callback_data = "start")  ]])
+        			InlineKeyboardButton("Paytm",url = "https://p.paytm.me/xCTH/vo37hii9")],[InlineKeyboardButton("Cancel",callback_data = "close")  ]])
 	await message.reply_text(text = text,reply_markup = keybord)
