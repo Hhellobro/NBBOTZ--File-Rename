@@ -221,9 +221,8 @@ async def settings(bot, message):
          text=Translation.SETTINGS_TXT,
          reply_markup=InlineKeyboardMarkup(button))
 
-
- elif data == "help":
-     await query.message.edit_text(
+   elif data =="help" 
+        await query.message.edit_text(
             text=Translation.HELP_TXT,
             disable_web_page_preview = True,
             reply_markup=InlineKeyboardMarkup(
@@ -234,5 +233,4 @@ async def settings(bot, message):
                  InlineKeyboardButton('back', callback_data="start")
             ]]
         ))
-	   
 
