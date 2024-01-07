@@ -317,7 +317,7 @@ async def aud(bot, update):
             used_limit(update.from_user.id, neg_used)
             os.remove(file_path)
     
-   elif data == "help":
+   elif data =="help":
         await query.message.edit_text(
             text=Translation.HELP_TXT,
             disable_web_page_preview = True,
