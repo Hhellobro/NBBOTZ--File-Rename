@@ -203,7 +203,7 @@ async def send_doc(client, message):
                 [[InlineKeyboardButton("📝 Rename", callback_data="rename"),
                   InlineKeyboardButton("✖️ Cancel", callback_data="cancel")]]
 	    ))
-elif data == "about":
+ elif data == "about":
         await query.message.edit_text(
             text=Translation.ABOUT_TXT.format(client.me.first_name, client.me.username,
                                              __version__, bot_version),
