@@ -22,13 +22,13 @@ async def warn(c, m):
 
 @Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["addpremium"]))
 async def buypremium(bot, message):
-	await message.reply_text("🦋 Select Plan to upgrade...", quote=True, reply_markup=InlineKeyboardMarkup([
+	await message.reply_text(" Select Plan to upgrade...", quote=True, reply_markup=InlineKeyboardMarkup([
 		           [
-				   InlineKeyboardButton("🪙 Silver", callback_data="vip1")
+				   InlineKeyboardButton(" Silver Plan", callback_data="vip1")
 				   ], [
-					InlineKeyboardButton("💫Gold", callback_data="vip2")
+					InlineKeyboardButton("Gold Plan", callback_data="vip2")
 				   ], [
-					InlineKeyboardButton("💎 Diamond", callback_data="vip3")
+					InlineKeyboardButton(" Diamond Plan", callback_data="vip3")
 					]]))
 
 
@@ -56,7 +56,7 @@ async def vip1(bot,update):
 	user_id = id[1].replace(" ", "")
 	inlimit  = 10737418240
 	uploadlimit(int(user_id),10737418240)
-	usertype(int(user_id),"🪙 **SILVER**")
+	usertype(int(user_id)," **SILVER PLAN**")
 	addpre(int(user_id))
 	await update.message.edit("Added successfully To Premium Upload limit 10 GB")
 	await bot.send_message(user_id,"Hey you are Upgraded To silver. check your plan here /myplan")
@@ -68,7 +68,7 @@ async def vip2(bot,update):
 	user_id = id[1].replace(" ", "")
 	inlimit = 53687091200
 	uploadlimit(int(user_id), 53687091200)
-	usertype(int(user_id),"💫 **GOLD**")
+	usertype(int(user_id)," **GOLD PLAN**")
 	addpre(int(user_id))
 	await update.message.edit("Added successfully To Premium Upload limit 50 GB")
 	await bot.send_message(user_id,"Hey you are Upgraded To Gold. check your plan here /myplan")
@@ -79,7 +79,7 @@ async def vip3(bot,update):
 	user_id = id[1].replace(" ", "")
 	inlimit = 107374182400
 	uploadlimit(int(user_id), 107374182400)
-	usertype(int(user_id),"💎 **DIAMOND**")
+	usertype(int(user_id)," **DIAMOND PLAN**")
 	addpre(int(user_id))
 	await update.message.edit("Added successfully To Premium Upload limit 100 GB")
 	await bot.send_message(user_id,"Hey you are Upgraded To Diamond. check your plan here /myplan")
