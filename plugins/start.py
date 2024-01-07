@@ -203,12 +203,12 @@ async def send_doc(client, message):
                 [[InlineKeyboardButton("📝 Rename", callback_data="rename"),
                   InlineKeyboardButton("✖️ Cancel", callback_data="cancel")]]
 	    ))
-         elif data == "about":
-              await query.message.edit_text(
-              text=Translation.ABOUT_TXT.format(client.me.first_name, client.me.username,
+	elif data == "about":
+        await query.message.edit_text(
+            text=Translation.ABOUT_TXT.format(client.me.first_name, client.me.username,
                                              __version__, bot_version),
-              disable_web_page_preview = True,
-              reply_markup=InlineKeyboardMarkup(
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
             [[
               InlineKeyboardButton('📃 Source code', url='https://github.com/Greymattersbot/md-renamebot')
             ],[
