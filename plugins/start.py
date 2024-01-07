@@ -220,17 +220,6 @@ async def settings(bot, message):
     await message.reply_text(
          text=Translation.SETTINGS_TXT,
          reply_markup=InlineKeyboardMarkup(button))
-
-   elif data =="help" 
-        await query.message.edit_text(
-            text=Translation.HELP_TXT,
-            disable_web_page_preview = True,
-            reply_markup=InlineKeyboardMarkup(
-                 [[
-                 InlineKeyboardButton('👨🏻 Owner commands', callback_data="owner_cmd"),
-                 InlineKeyboardButton('💬 About', callback_data="about")
-                 ],[
-                 InlineKeyboardButton('back', callback_data="start")
-            ]]
-        ))
+elif data == "help":
+  await 
 
