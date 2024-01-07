@@ -217,14 +217,14 @@ elif data == "help":
             ]]
         ))
      
-elif data == "owner_cmd":
+ elif data == "owner_cmd":
         await query.message.edit_text(
             text=Translation.OWNER_COMMANDS_TXT,
             reply_markup=InlineKeyboardMarkup(
                [[InlineKeyboardButton('Back', callback_data="help")]]
         ))
      
-elif data == "about":
+ elif data == "about":
         await query.message.edit_text(
             text=Translation.ABOUT_TXT.format(client.me.first_name, client.me.username,
                                              __version__, bot_version),
@@ -237,7 +237,7 @@ elif data == "about":
             ]]
         ))
     
-elif data in ['settings', 'toggle_mode']:
+ elif data in ['settings', 'toggle_mode']:
        mode = await db.get_uploadmode(user_id)
        if data == "toggle_mode":
           if not mode:
@@ -263,7 +263,7 @@ elif data in ['settings', 'toggle_mode']:
           text=Translation.SETTINGS_TXT,
           reply_markup=InlineKeyboardMarkup(button))
      
-elif data == "custom_caption":
+ elif data == "custom_caption":
         await query.message.edit_text(
             text=Translation.CUSTOM_CAPTION_TXT,
             disable_web_page_preview = True,
@@ -276,20 +276,20 @@ elif data == "custom_caption":
               ]]
         ))
      
-elif data =="show_caption":
+ elif data =="show_caption":
         caption = await db.get_caption(user_id)
         if not caption:
            return await query.answer("You didn't added any custom caption", show_alert=True)
         await query.answer(f"Your Custom Caption:\n\n{caption}", show_alert=True)
         
-elif data == "delete_caption":
+ elif data == "delete_caption":
         caption = await db.get_caption(user_id)
         if not caption:
            return await query.answer("Nothing will found to delete", show_alert=True)
         await db.set_caption(query.from_user.id, None)
         return await query.answer("caption deleted successfully", show_alert=True)   
     
-elif data == "custom_thumbnail":
+ elif data == "custom_thumbnail":
         await query.message.edit_text(
             text=Translation.THUMBNAIL_TXT,
             reply_markup=InlineKeyboardMarkup(
@@ -301,19 +301,19 @@ elif data == "custom_thumbnail":
                ]]
         ))
         
-elif data == "show_thumb":
+ elif data == "show_thumb":
         thumb = await db.get_thumbnail(user_id)
         if not thumb:
            return await query.answer(Translation.THUMB_NOT_FOUND_TXT, show_alert=True)
         await query.message.delete()
         await query.message.reply_photo(thumb)
             
-elif data == "delete_thumb":
+ elif data == "delete_thumb":
         thumb = await db.get_thumbnail(user_id)
         if not thumb:
            return await query.answer(Translation.THUMB_NOT_FOUND_TXT, show_alert=True)
         await db.set_thumbnail(user_id, None)
         return await query.answer(Translation.REMOVE_CUSTOM_THUMB_TXT, show_alert=True)
         
-elif data == "close":
+ elif data == "close":
         await query.message.delete()
