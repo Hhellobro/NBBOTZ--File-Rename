@@ -203,7 +203,6 @@ async def send_doc(client, message):
                 [[InlineKeyboardButton("📝 Rename", callback_data="rename"),
                   InlineKeyboardButton("✖️ Cancel", callback_data="cancel")]]
 	    ))
-	
-     elif data == "help":
+elif 
 	   
 
