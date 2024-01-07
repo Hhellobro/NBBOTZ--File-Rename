@@ -203,6 +203,22 @@ async def send_doc(client, message):
                 [[InlineKeyboardButton("📝 Rename", callback_data="rename"),
                   InlineKeyboardButton("✖️ Cancel", callback_data="cancel")]]
 	    ))
- elif 
+  @Client.on_message(filters.command('settings'))
+async def settings(bot, message):
+    upload_mode = await db.get_uploadmode(message.from_user.id)
+    upload_mode = "Default" if not upload_mode else upload_mode
+    button = [[
+      InlineKeyboardButton('📝 Custom Caption', callback_data="custom_caption")
+      ],[
+      InlineKeyboardButton('🖼️ Custom Thumbnail', callback_data="custom_thumbnail")
+      ],[
+      InlineKeyboardButton(f'📤 Upload mode', callback_data="toggle_mode"),
+      InlineKeyboardButton(upload_mode, callback_data="toggle_mode")
+      ],[
+      InlineKeyboardButton('⛔ Close', callback_data="close")
+    ]]
+    await message.reply_text(
+         text=Translation.SETTINGS_TXT,
+         reply_markup=InlineKeyboardMarkup(button))
 	   
 
