@@ -428,10 +428,7 @@ async def aud(bot, update):
         await db.set_thumbnail(user_id, None)
         return await query.answer(Translation.REMOVE_CUSTOM_THUMB_TXT, show_alert=True)
         
-    elif data == "close":
-        await query.message.delete()
-
-
+    
 # 
 #  LazyDeveloperr
 # 
